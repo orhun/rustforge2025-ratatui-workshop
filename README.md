@@ -1,4 +1,6 @@
-![](assets/workshop-banner.png)
+<a href="https://www.rustasiaconf.com/speakers/orhun-parmaksiz">
+  <img src="assets/workshop-banner.png" width="80%">
+</a>
 
 ## License
 
