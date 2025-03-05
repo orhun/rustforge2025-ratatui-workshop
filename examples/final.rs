@@ -150,11 +150,12 @@ impl Widget for &mut App {
 
 impl App {
     fn render_header(&self, area: Rect, buf: &mut Buffer) {
-        let header = Paragraph::new("Ratatop")
-            .block(Block::default().bg(tailwind::GRAY.c900))
+        Line::from("Ratatop")
             .alignment(Alignment::Center)
-            .style(Style::new().fg(tailwind::BLUE.c200).bold());
-        header.render(area, buf);
+            .fg(tailwind::BLUE.c200)
+            .bg(tailwind::GRAY.c800)
+            .bold()
+            .render(area, buf);
     }
 
     fn render_cpu(&self, area: Rect, buf: &mut Buffer) {
