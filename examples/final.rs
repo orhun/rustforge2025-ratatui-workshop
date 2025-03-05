@@ -10,7 +10,7 @@ use ratatui::{
     symbols::Marker,
     text::Line,
     widgets::{
-        Axis, Bar, BarChart, BarGroup, Block, BorderType, Chart, Dataset, GraphType, Paragraph,
+        Axis, Bar, BarChart, BarGroup, Block, BorderType, Chart, Dataset, GraphType,
         RenderDirection, Row, Sparkline, StatefulWidget, Table, TableState, Widget,
     },
 };
