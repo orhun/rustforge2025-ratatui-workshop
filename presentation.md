@@ -98,14 +98,14 @@ cargo run
 
 # Schedule
 
-| Duration | Chapter       | Topic                                                    |
-| -------- | ------------- | -------------------------------------------------------- |
-| **20m**  | **Chapter 1** | **Setup** - Install Rust, cargo-generate, create project |
-| **25m**  | **Chapter 2** | **Layout & Styling** - Define UI structure, apply styles |
-| **15m**  | **Chapter 3** | **Manage State** - Use `sysinfo`, refresh data           |
-| **40m**  | **Chapter 4** | **Widgets** - Render charts, bar charts, sparklines      |
-| **20m**  | **Chapter 5** | **Interactivity** - Handle inputs, scroll table, search  |
-| **-**    | 🧀            | **Q&A / Extras**                                         |
+| Duration   | Chapter       | Topic                                                    |
+| ---------- | ------------- | -------------------------------------------------------- |
+| **20 min** | **Chapter 1** | **Setup** - Install Rust, cargo-generate, create project |
+| **25 min** | **Chapter 2** | **Layout & Styling** - Define UI structure, apply styles |
+| **15 min** | **Chapter 3** | **Manage State** - Use `sysinfo`, refresh data           |
+| **40 min** | **Chapter 4** | **Widgets** - Render charts, bar charts, sparklines      |
+| **20 min** | **Chapter 5** | **Interactivity** - Handle inputs, scroll table, search  |
+| **-**      | 🧀            | **Q&A / Extras**                                         |
 
 <!-- end_slide -->
 
