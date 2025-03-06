@@ -131,12 +131,13 @@ impl App {
 
 impl Widget for &mut App {
     fn render(self, area: Rect, buffer: &mut Buffer) {
-        let layout = Layout::vertical([Length(1), Min(0)]);
-        let [header_area, main_area] = layout.areas(area);
+        let [header_area, main_area] = Layout::vertical([Length(1), Min(0)]).areas(area);
 
         let [first, second, third] =
             Layout::vertical([Percentage(25), Fill(1), Fill(1)]).areas(main_area);
+
         let [disk_area, memory_area] = Layout::horizontal([Percentage(30), Fill(1)]).areas(second);
+
         let [network_area, process_area] = Layout::horizontal([Fill(1); 2]).areas(third);
 
         self.render_header(header_area, buffer);
