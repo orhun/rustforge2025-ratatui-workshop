@@ -98,14 +98,14 @@ cargo run
 
 # Schedule
 
-| Duration   | Chapter       | Topic                                                    |
-| ---------- | ------------- | -------------------------------------------------------- |
-| **20 min** | **Chapter 1** | **Setup** - Install Rust, cargo-generate, create project |
-| **25 min** | **Chapter 2** | **Layout & Styling** - Define UI structure, apply styles |
-| **15 min** | **Chapter 3** | **Manage State** - Use `sysinfo`, refresh data           |
-| **40 min** | **Chapter 4** | **Widgets** - Render charts, bar charts, sparklines      |
-| **20 min** | **Chapter 5** | **Interactivity** - Handle inputs, scroll table, search  |
-| **-**      | 🧀            | **Q&A / Extras**                                         |
+| Duration   | Chapter       | Topic                                                      |
+| ---------- | ------------- | ---------------------------------------------------------- |
+| **10 min** | **Chapter 1** | **Setup** - Install Rust, cargo-generate, create project   |
+| **15 min** | **Chapter 2** | **Manage State** - Use `sysinfo`, refresh data             |
+| **30 min** | **Chapter 3** | **Layout & Styling** - Define UI structure, apply styles   |
+| **45 min** | **Chapter 4** | **Widgets** - Render charts, bar charts, sparklines, table |
+| **20 min** | **Chapter 5** | **Interactivity** - Handle inputs, scroll table, search    |
+| **-**      | 🧀            | **Q&A / Extras**                                           |
 
 <!-- end_slide -->
 
@@ -137,29 +137,7 @@ $ cargo generate ratatui/templates
 
 <!-- end_slide -->
 
-# Chapter 2 - Layout & styling 🧀
-
-<!-- column_layout: [1, 1] -->
-
-<!-- column: 0 -->
-
-## Objectives
-
-• Lay out the main application blocks
-
-• CPU, Disks, Memory, Network, Processes
-
-• Add style to the titles
-
-<!-- column: 1 -->
-
-## Bonus track
-
-• Refactor each block into its own function
-
-<!-- end_slide -->
-
-# Chapter 3 - Manage state 🧀
+# Chapter 2 - Manage state 🧀
 
 <!-- column_layout: [1, 1] -->
 
@@ -171,13 +149,37 @@ $ cargo generate ratatui/templates
 
 • Store `System` struct
 
-• Refresh the data every 100ms
+• Refresh the data every 16ms
 
 <!-- column: 1 -->
 
 ## Bonus track
 
-• Create `update` method
+• Create `App::refresh` method
+
+<!-- end_slide -->
+
+# Chapter 3 - Layout & styling 🧀
+
+<!-- column_layout: [1, 1] -->
+
+<!-- column: 0 -->
+
+## Objectives
+
+• Lay out the main application blocks
+
+• CPU, Disks, Memory, Network, Processes
+
+<!-- column: 1 -->
+
+## Bonus track
+
+• Add a 1-line header to the top with your app name
+
+• Refactor rendering each block into its own function
+
+• Make the border colors and styles prettier
 
 <!-- end_slide -->
 
@@ -189,9 +191,11 @@ $ cargo generate ratatui/templates
 
 ## Objectives
 
-• Store CPU data in app state
+• Render CPU via `Chart` widget
 
-• Render a `Chart` widget
+• Customize the `Chart` widget
+
+• Render processes via `Table` widget
 
 <!-- column: 1 -->
 
@@ -213,17 +217,17 @@ $ cargo generate ratatui/templates
 
 ## Objectives
 
-• Store processes data in app state
+• Scroll the `Table` when J/K pressed
 
-• Render a `Table` widget
-
-• Scroll the table when J/K pressed
+• Add text input via `tui-input`
 
 <!-- column: 1 -->
 
 ## Bonus track
 
-• Support searching via `tui-input`
+• Search processes
+
+• Kill the selected process
 
 <!-- end_slide -->
 
