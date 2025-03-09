@@ -175,7 +175,7 @@ $ cargo generate ratatui/templates
 
 ## Bonus track
 
-• Add a 1-line header to the top with your app name
+• Add a one line header to the top with your app name
 
 • Refactor rendering each block into its own function
 
