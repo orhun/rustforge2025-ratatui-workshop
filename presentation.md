@@ -179,7 +179,7 @@ $ cargo generate ratatui/templates
 
 • Refactor rendering each block into its own function
 
-• Make the border colors and styles prettier
+• Render pretty borders and header
 
 <!-- end_slide -->
 

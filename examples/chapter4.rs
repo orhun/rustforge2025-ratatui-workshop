@@ -3,18 +3,17 @@ use std::{collections::HashMap, time::Duration};
 use color_eyre::Result;
 use crossterm::event::{self, Event, KeyCode, KeyEvent, KeyEventKind, KeyModifiers};
 use ratatui::{
-    layout::{Alignment, Constraint::*, Direction, Flex, Layout, Rect},
+    layout::{Alignment, Constraint::*, Direction, Layout, Rect},
     style::{palette::tailwind, Style, Stylize},
     symbols::Marker,
     text::Line,
     widgets::{
-        Axis, Bar, BarChart, BarGroup, Block, BorderType, Chart, Clear, Dataset, GraphType,
-        RenderDirection, Row, Sparkline, Table, TableState,
+        Axis, Bar, BarChart, BarGroup, Block, BorderType, Chart, Dataset, GraphType,
+        RenderDirection, Row, Sparkline, Table,
     },
     DefaultTerminal, Frame,
 };
 use sysinfo::{Disks, Networks, ProcessesToUpdate, System};
-use tui_textarea::TextArea;
 
 fn main() -> color_eyre::Result<()> {
     color_eyre::install()?;
@@ -29,12 +28,6 @@ fn main() -> color_eyre::Result<()> {
 pub struct App {
     /// Is the application running?
     running: bool,
-    /// Is the user searching?
-    searching: bool,
-    /// The current state of the table.
-    table_state: TableState,
-    /// The input area.
-    textarea: TextArea<'static>,
 
     /// System information.
     system: System,
@@ -76,13 +69,6 @@ impl App {
     pub fn new() -> Self {
         Self {
             running: true,
-            searching: false,
-            table_state: TableState::default(),
-            textarea: {
-                let mut textarea = TextArea::default();
-                textarea.set_block(Self::create_pane("Search"));
-                textarea
-            },
             system: System::new_all(),
             networks: Networks::new(),
             cpu_data: Vec::new(),
@@ -95,7 +81,6 @@ impl App {
     /// Run the application's main loop.
     pub fn run(mut self, mut terminal: DefaultTerminal) -> Result<()> {
         self.refresh_disks();
-        self.table_state.select(Some(0));
         while self.running {
             terminal.draw(|frame| {
                 self.render(frame);
@@ -189,9 +174,6 @@ impl App {
         self.render_memory(frame, memory_area);
         self.render_networks(frame, network_area);
         self.render_processes(frame, process_area);
-        if self.searching {
-            self.render_search(frame, process_area);
-        }
     }
 
     fn render_header(&self, frame: &mut Frame, area: Rect) {
@@ -366,7 +348,7 @@ impl App {
     }
 
     /// Renders a table of processes.
-    fn render_processes(&mut self, frame: &mut Frame, area: Rect) {
+    fn render_processes(&self, frame: &mut Frame, area: Rect) {
         let header = Row::new(vec!["Pid", "Cmd", "CPU%", "Mem%"]).style(tailwind::YELLOW.c200);
 
         let widths = [Length(10), Fill(2), Fill(1), Fill(1)];
@@ -383,13 +365,6 @@ impl App {
             ];
             rows.push(row);
         }
-
-        let text = self.textarea.lines().first().unwrap();
-        rows.retain(|row| {
-            row.iter()
-                .any(|cell| cell.to_lowercase().contains(&text.to_lowercase()))
-        });
-
         rows.sort_by(|a, b| {
             a[2].parse::<f64>()
                 .unwrap_or_default()
@@ -410,20 +385,7 @@ impl App {
         .highlight_symbol("> ")
         .block(Self::create_pane("Processes"));
 
-        frame.render_stateful_widget(table, area, &mut self.table_state);
-    }
-
-    /// Renders a popup for search input.
-    fn render_search(&mut self, frame: &mut Frame<'_>, area: Rect) {
-        let [search_area] = Layout::horizontal([Percentage(90)])
-            .flex(Flex::Center)
-            .areas(area);
-        let [search_area] = Layout::vertical([Max(3)])
-            .flex(Flex::Center)
-            .areas(search_area);
-
-        frame.render_widget(Clear, search_area);
-        frame.render_widget(&self.textarea, search_area);
+        frame.render_widget(table, area);
     }
 
     /// Creates a bordered block with a title.
@@ -459,28 +421,10 @@ impl App {
 
     /// Handles the key events and updates the state of [`App`].
     fn on_key_event(&mut self, key: KeyEvent) {
-        if self.searching {
-            if key.code == KeyCode::Enter {
-                self.searching = false;
-                return;
-            } else {
-                self.textarea.input(key);
-            }
-        }
         match (key.modifiers, key.code) {
             (_, KeyCode::Esc | KeyCode::Char('q'))
             | (KeyModifiers::CONTROL, KeyCode::Char('c') | KeyCode::Char('C')) => self.quit(),
-            (_, KeyCode::Char('j') | KeyCode::Down) => {
-                self.table_state.select_next();
-            }
-            (_, KeyCode::Char('k') | KeyCode::Up) => {
-                self.table_state.select_previous();
-            }
-            (_, KeyCode::Char('/')) => {
-                self.textarea.select_all();
-                self.textarea.delete_line_by_end();
-                self.searching = !self.searching;
-            }
+            // Add other key handlers here.
             _ => {}
         }
     }

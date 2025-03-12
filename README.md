@@ -37,17 +37,33 @@ The workshop is split up into 5 chapters and aims to be completed in 2 hours.
 | **20 min** | **Chapter 5** | **Interactivity** - Handle inputs, scroll table, search    |
 | **-**      | 🧀            | **Q&A / Extras**                                           |
 
-### Presenting
+### Walkthrough
 
-You can also present this workshop at your local Rust meetup or conference!
+Use the [slides](presentation.md) to follow along with the workshop.
 
-There are minimal slides included in the `presentation.md` file. You can use [`presenterm`](https://github.com/mfontanini/presenterm) to start the presentation:
+> [!TIP]
+> You can use [`presenterm`](https://github.com/mfontanini/presenterm) to present the slides in your terminal.
+>
+> ```sh
+> presenterm -c assets/presenterm.yml presentation.md
+> ```
+
+Start with installing [`cargo-generate`](https://github.com/cargo-generate/cargo-generate) and creating a new Ratatui project via [`templates`](https://github.com/ratatui/templates):
 
 ```sh
-presenterm -c assets/presenterm.yml presentation.md
+cargo install cargo-generate
 ```
 
-## Show and tell!
+```sh
+# select the "simple" template
+cargo generate ratatui/templates
+```
+
+Then follow the chapters to build the **Ratatop** application. If you get stuck, check out the [examples](./examples) folder which contains the completed code for each chapter. We recommend to try it yourself first and only refer to the example code in case you run into issues.
+
+The final code can be found in the [src/main.rs](./src/main.rs) file.
+
+## Show and tell! 🧀
 
 Join the [Ratatui Discord](https://discord.gg/pMCEU9hNEj) and share your creations with the other terminal chefs!
 
