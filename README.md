@@ -26,7 +26,7 @@ Previous experience with Rust is not required, but it is recommended to have a b
 
 ### Chapters
 
-The workshop is split up into 5 chapters and aims to be completed in 2 hours.
+The workshop is split up into 5 chapters and aims to be completed **in 2 hours.**
 
 | Duration   | Chapter       | Topic                                                      |
 | ---------- | ------------- | ---------------------------------------------------------- |
