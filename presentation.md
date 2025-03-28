@@ -52,11 +52,11 @@ theme:
 
 ---
 
-`https://orhun.dev             `
+https://orhun.dev
 
-`https://github.com/orhun      `
+https://github.com/orhun
 
-`https://youtube.com/@orhundev `
+https://youtube.com/@orhundev
 
 <!-- end_slide -->
 
