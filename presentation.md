@@ -109,7 +109,7 @@ cargo run
 
 <!-- end_slide -->
 
-# Chapter 1 - Setup 🧀
+# Chapter 1 - Setup 🧀 (10 min)
 
 <!-- column_layout: [1, 1] -->
 
@@ -137,7 +137,7 @@ $ cargo generate ratatui/templates
 
 <!-- end_slide -->
 
-# Chapter 2 - Manage state 🧀
+# Chapter 2 - Manage state 🧀 (15 min)
 
 <!-- column_layout: [1, 1] -->
 
@@ -159,7 +159,7 @@ $ cargo generate ratatui/templates
 
 <!-- end_slide -->
 
-# Chapter 3 - Layout & styling 🧀
+# Chapter 3 - Layout & styling 🧀 (30 min)
 
 <!-- column_layout: [1, 1] -->
 
@@ -183,7 +183,7 @@ $ cargo generate ratatui/templates
 
 <!-- end_slide -->
 
-# Chapter 4 - Widgets 🧀
+# Chapter 4 - Widgets 🧀 (45 min)
 
 <!-- column_layout: [1, 1] -->
 
@@ -209,7 +209,7 @@ $ cargo generate ratatui/templates
 
 <!-- end_slide -->
 
-# Chapter 5 - Interactivity 🧀
+# Chapter 5 - Interactivity 🧀 (20 min)
 
 <!-- column_layout: [1, 1] -->
 
