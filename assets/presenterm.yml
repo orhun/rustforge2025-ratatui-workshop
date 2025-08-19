@@ -7,14 +7,6 @@ defaults:
   # the image protocol to use.
   image_protocol: auto
 
-typst:
-  # the pixels per inch when rendering latex/typst formulas.
-  ppi: 300
-
-mermaid:
-  # the scale parameter passed to the mermaid CLI (mmdc).
-  scale: 2
-
 options:
   # whether slides are automatically terminated when a slide title is found.
   implicit_slide_ends: false
@@ -32,6 +24,20 @@ options:
 
   # whether to treat a thematic break as a slide end.
   end_slide_shorthand: false
+
+transition:
+  duration_millis: 300
+  frames: 45
+  animation:
+    style: fade
+
+typst:
+  # the pixels per inch when rendering latex/typst formulas.
+  ppi: 300
+
+mermaid:
+  # the scale parameter passed to the mermaid CLI (mmdc).
+  scale: 2
 
 snippet:
   exec:

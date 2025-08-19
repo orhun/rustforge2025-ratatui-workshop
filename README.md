@@ -1,6 +1,6 @@
-# Ratatui Workshop 👨‍🍳🐀
+# Becoming a Terminal Chef with Ratatui 👨‍🍳🐀
 
-![](assets/workshop-banner.png)
+> Your terminal can do more than you think and this workshop shows you how. [Ratatui](https://ratatui.rs) is the leading framework for building terminal user interfaces (TUIs) in Rust. This workshop by [Orhun Parmaksız](https://github.com/orhun), the framework's maintainer, will get you cooking up some tasty terminal UIs in no time.
 
 ### What will you build?
 
@@ -26,7 +26,7 @@ Previous experience with Rust is not required, but it is recommended to have a b
 
 ### Chapters
 
-The workshop is split up into 5 chapters and aims to be completed **in 2 hours.**
+The workshop is split up into 5 chapters and aims to be completed **in 3 hours.**
 
 | Duration   | Chapter       | Topic                                                      |
 | ---------- | ------------- | ---------------------------------------------------------- |
@@ -35,7 +35,7 @@ The workshop is split up into 5 chapters and aims to be completed **in 2 hours.*
 | **30 min** | **Chapter 3** | **Layout & Styling** - Define UI structure, apply styles   |
 | **45 min** | **Chapter 4** | **Widgets** - Render charts, bar charts, sparklines, table |
 | **20 min** | **Chapter 5** | **Interactivity** - Handle inputs, scroll table, search    |
-| **-**      | 🧀            | **Q&A / Extras**                                           |
+| **60 min** | 🧀            | **Q&A** / **Debugging** / **Extras**                       |
 
 ### Walkthrough
 

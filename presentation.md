@@ -1,62 +1,55 @@
 ---
-title: Cooking up TUIs with Ratatui
-sub_title: RustAsia 2025 🐲
+title: Becoming a Terminal Chef with Ratatui
+sub_title: RustForge 2025
 author: Orhun Parmaksız
 theme:
-  path: assets/theme.yml
+  name: catppuccin-mocha
+  override:
+    footer:
+      style: template
+      left: "@orhundev"
+      right: ""
 ---
 
-<!-- new_lines: 2 -->
+<!-- alignment: center -->
 
-![image:width:50%](assets/rustasia.png)
+![image:width:50%](assets/rustforge.png)
 
-![image:width:20%](assets/rat-chef.gif)
+![image:width:15%](assets/rat-chef.gif)
 
-<!-- column_layout: [1, 2, 1] -->
+`Welcome to the workshop!`
 
-<!-- column: 1 -->
-
-#### <span style="color: #ffffff">**Welcome to the workshop!**</span>
-
-<!-- reset_layout -->
-
-<!-- column_layout: [1, 9] -->
-
-<!-- column: 1 -->
-
-[](https://github.com/orhun/rustasia2025-ratatui-workshop)
+[](https://github.com/orhun/rustforge2025-ratatui-workshop)
 
 <!-- end_slide -->
 
-<!-- column_layout: [4, 5] -->
+<!-- column_layout: [1, 1] -->
 
 <!-- column: 0 -->
 
-<!-- new_lines: 1 -->
-
-![](assets/orhun.jpg)
+![image:width:80%](assets/rat-cook.png)
 
 <!-- column: 1 -->
 
-<!-- new_lines: 1 -->
+<!-- new_lines: 2 -->
 
-<!-- pause -->
+## **Orhun Parmaksız**
 
-# **Orhun Parmaksız**
+🇹🇷 Creator based in **Ankara, Türkiye**
 
-🦀 Open source, Rust and terminals!
+🦀 _Open source, Rust and terminals!_
 
-🐭 **Ratatui**, **Ratzilla**, **git-cliff**, **binsider**
+🐭 **Ratatui**, **Ratzilla**, **git-cliff** ...
 
 📦 **Arch Linux** (btw)
 
+🎹 Wannabe musician
+
 ---
 
-https://orhun.dev
+`https://github.com/orhun`
 
-https://github.com/orhun
-
-https://youtube.com/@orhundev
+`https://youtube.com/@orhundev`
 
 <!-- end_slide -->
 
@@ -82,7 +75,7 @@ https://youtube.com/@orhundev
 
 ## Structure
 
-- 2 hours in total
+- 3 hours in total
 - Split up into 5 chapters
 - Hands-on coding
 
@@ -105,7 +98,7 @@ cargo run
 | **30 min** | **Chapter 3** | **Layout & Styling** - Define UI structure, apply styles   |
 | **45 min** | **Chapter 4** | **Widgets** - Render charts, bar charts, sparklines, table |
 | **20 min** | **Chapter 5** | **Interactivity** - Handle inputs, scroll table, search    |
-| **-**      | 🧀            | **Q&A / Extras**                                           |
+| **60 min** | 🧀            | **Q&A** / **Debugging** / **Extras**                       |
 
 <!-- end_slide -->
 
