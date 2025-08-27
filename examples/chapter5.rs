@@ -3,15 +3,15 @@ use std::{collections::HashMap, time::Duration};
 use color_eyre::Result;
 use crossterm::event::{self, Event, KeyCode, KeyEvent, KeyEventKind, KeyModifiers};
 use ratatui::{
+    DefaultTerminal, Frame,
     layout::{Alignment, Constraint::*, Direction, Flex, Layout, Rect},
-    style::{palette::tailwind, Style, Stylize},
+    style::{Style, Stylize, palette::tailwind},
     symbols::Marker,
     text::Line,
     widgets::{
         Axis, Bar, BarChart, BarGroup, Block, BorderType, Chart, Clear, Dataset, GraphType,
         RenderDirection, Row, Sparkline, Table, TableState,
     },
-    DefaultTerminal, Frame,
 };
 use sysinfo::{Disks, Networks, ProcessesToUpdate, System};
 use tui_textarea::TextArea;
@@ -214,11 +214,13 @@ impl App {
             .map(|v| (v.point, v.usage))
             .collect::<Vec<_>>();
 
-        let datasets = vec![Dataset::default()
-            .marker(Marker::Braille)
-            .graph_type(GraphType::Line)
-            .style(tailwind::GREEN.c400)
-            .data(&data)];
+        let datasets = vec![
+            Dataset::default()
+                .marker(Marker::Braille)
+                .graph_type(GraphType::Line)
+                .style(tailwind::GREEN.c400)
+                .data(&data),
+        ];
 
         let current_percentage = self.cpu_data.last().map(|v| v.usage).unwrap_or_default();
         let current_percentage_line =
@@ -302,12 +304,14 @@ impl App {
             .map(|v| (v.point, v.usage))
             .collect::<Vec<_>>();
 
-        let datasets = vec![Dataset::default()
-            .name(current_percentage_line)
-            .marker(Marker::Bar)
-            .graph_type(GraphType::Line)
-            .style(tailwind::BLUE.c400)
-            .data(&data)];
+        let datasets = vec![
+            Dataset::default()
+                .name(current_percentage_line)
+                .marker(Marker::Bar)
+                .graph_type(GraphType::Line)
+                .style(tailwind::BLUE.c400)
+                .data(&data),
+        ];
 
         let x_axis = Axis::default().bounds([0.0, self.memory_data.len() as f64]);
         let y_axis = Axis::default().bounds([0.0, self.system.total_memory() as f64]);
@@ -427,7 +431,7 @@ impl App {
     }
 
     /// Creates a bordered block with a title.
-    fn create_pane(title: &str) -> Block {
+    fn create_pane(title: &str) -> Block<'_> {
         let title = Line::from_iter([
             "┤ ".fg(tailwind::GRAY.c700),
             title.fg(tailwind::BLUE.c200),

@@ -126,7 +126,7 @@ impl App {
     }
 
     /// Creates a bordered block with a title.
-    fn create_pane(title: &str) -> Block {
+    fn create_pane(title: &str) -> Block<'_> {
         let title = Line::from_iter([
             "┤ ".fg(tailwind::GRAY.c700),
             title.fg(tailwind::BLUE.c200),
