@@ -35,15 +35,15 @@ theme:
 
 ## **Orhun Parmaksız**
 
-🇹🇷 Creator based in **Ankara, Türkiye**
+🐭 Lead maintainer of **Ratatui**
 
-🦀 _Open source, Rust and terminals!_
-
-🐭 **Ratatui**, **Ratzilla**, **git-cliff** ...
+🇹🇷 Based in **Ankara, Türkiye**
 
 📦 **Arch Linux** (btw)
 
 🎹 Wannabe musician
+
+(My talk "Rust Rocks" tomorrow!!!)
 
 ---
 
@@ -79,9 +79,19 @@ theme:
 - Split up into 5 chapters
 - Hands-on coding
 
+<!-- pause -->
+
+## Requirements
+
+- Laptop with Rust installed
+- Code editor with Rust support
+- Terminal emulator (Wezterm, etc.)
+
+<!-- pause -->
+
 <!-- end_slide -->
 
-# What are we gonna cook?
+# What are we gonna cook today?
 
 ```bash +exec +acquire_terminal
 cargo run
@@ -210,9 +220,11 @@ $ cargo generate ratatui/templates
 
 ## Objectives
 
-• Scroll the `Table` when J/K pressed
+• Scroll the `Table` when `j`/`k` pressed
 
-• Add text input via `tui-input`
+• Add text input via `tui-textarea`
+
+• Show popup when `/` pressed
 
 <!-- column: 1 -->
 
@@ -224,6 +236,18 @@ $ cargo generate ratatui/templates
 
 <!-- end_slide -->
 
-# Show and tell!
+# Extras (60 min)
+
+<!-- column_layout: [1, 1] -->
+
+<!-- column: 0 -->
+
+• Q&A
+
+• Show & tell!
+
+• Start building your own app!
+
+<!-- column: 1 -->
 
 ![](assets/rat-cheese.gif)
